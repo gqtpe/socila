@@ -3,12 +3,36 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createBrowserRouter, Link, RouterProvider} from "react-router-dom";
+import Profile from "./components/Profile/Profile";
+import Messenger from "./components/Messenger/Messenger";
+
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <App/>,
+        children: [
+            {
+                path: "profile",
+                element: <Profile/>
+            },
+            {
+                path: "messenger",
+                element: <Messenger/>
+            },
+        ],
+    },
+    {
+        path: "*",
+        element: <div>404 <Link to={'profile'}>go to home</Link></div>
+    }
+])
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById('root') as HTMLElement
 );
 root.render(
-    <App />
+    <RouterProvider router={router}/>
 );
 
 // If you want to start measuring performance in your app, pass a function
