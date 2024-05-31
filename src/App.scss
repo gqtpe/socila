@@ -1,3 +1,16 @@
 .App{
-
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  position: relative;
+}
+header{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+nav, header, main{
+  border: 1px solid black;
 }

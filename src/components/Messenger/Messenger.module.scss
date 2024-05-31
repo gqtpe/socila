@@ -1,0 +1,18 @@
+.messenger{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    &__chats{
+        background: lime;
+    }
+    &__messages{
+        background: red;
+    }
+}
+
+
+.messages{
+
+    &__message{
+        color: rebeccapurple;
+    }
+}
